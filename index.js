@@ -92,6 +92,8 @@ var unifiedServer = function(req,res){
         res.setHeader('Content-Type', 'application/json');
         res.writeHead(statusCode);
         res.end(payloadString);
+
+        // Logging out the response
         console.log(trimmedPath,statusCode);
       });
 
@@ -111,7 +113,7 @@ handlers.notFound = function(data,callback){
   callback(404);
 };
 
-// Hellp handler
+// Hello handler
 handlers.hello = function(data,callback){
   callback(200, {'Message':'Hello, world!'});
 };
